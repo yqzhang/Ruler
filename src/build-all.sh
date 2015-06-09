@@ -9,13 +9,15 @@ set -ex
 for file in functional_unit/*.asm
 do
   echo "Build ${file} ..."
-  as -g "${file}" -o "bin/${file%.asm}.o"
-  ld -g "bin/${file%.asm}.o" -o "bin/${file%.asm}"
+  base_f=`basename ${file}`
+  as -g "${file}" -o "bin/${base_f%.asm}.o"
+  ld -g "bin/${base_f%.asm}.o" -o "bin/${base_f%.asm}"
 done
 
 # Build memory subsystem rulers
-for file in memory_system/*.c
+for file in memory_subsystem/*.c
 do
   echo "Build ${file} ..."
-  gcc "${file}" -o "bin/${file%.c}"
+  base_f=`basename ${file}`
+  gcc "${file}" -o "bin/${base_f%.c}"
 done
