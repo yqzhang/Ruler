@@ -1,4 +1,4 @@
-# Ruler
+# Ruler [![Build Status](https://travis-ci.org/yqzhang/Ruler.svg?branch=master)](https://travis-ci.org/yqzhang/Ruler)
 
 Ruler is a set of microbenchmarks for quantifying interference on co-locations.
 The project is released under [BSD license](LICENSE). We would love to have
